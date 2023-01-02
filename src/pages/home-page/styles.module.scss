@@ -5,7 +5,7 @@
   position: relative;
   padding-top: calc(units.$header-height + funcs.px-rem(38));
   display: flex;
-  background: url("../../shared/assets/imgs/bg.png");
+  background: url("../../shared/assets/imgs/stars.png");
   background-size: cover;
   background-position-y: 50%;
   background-position-x: 50%;
@@ -19,6 +19,7 @@
 }
 
 .banner_wrap__welcome {
+  z-index: 50;
   width: funcs.px-rem(446);
 }
 
@@ -38,7 +39,15 @@
   letter-spacing: funcs.px-rem(0.05);
   line-height: 1;
   text-transform: uppercase;
-  color: white;
+  color: transparent;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 106, 0, 1) 95%,
+    rgba(255, 106, 0, 1) 100%
+  );
+
+  background-clip: text;
 
   span {
     display: block;
@@ -49,14 +58,92 @@
   }
 }
 
+.stars_wrap,
+.sun_wrap,
 .mars_wrap {
   position: absolute;
   left: 50%;
   top: 50%;
+}
+
+.stars_wrap {
+  z-index: 40;
+  transform: translate(-48%, -50%);
+
+  img {
+    user-select: none;
+    pointer-events: none;
+    transform: scale(1.02);
+  }
+}
+
+.sun_wrap {
+  z-index: 55;
+  width: funcs.px-rem(388 / 3);
+  height: funcs.px-rem(388 / 3);
+  background: rgb(255, 255, 255);
+  transform: translate(
+    calc(-50% + funcs.px-rem(388 / 2.8)),
+    calc(-50% + funcs.px-rem(388 / 5.8))
+  );
+
+  filter: blur(funcs.px-rem(388 / 50));
+
+  box-shadow: 0 0 funcs.px-rem(12) funcs.px-rem(24) rgba(255, 238, 0, 0.8),
+    0 0 funcs.px-rem(48) funcs.px-rem(64) rgba(255, 166, 0, 0.96),
+    0 0 funcs.px-rem(64) funcs.px-rem(64) rgba(255, 115, 0, 1),
+    0 0 funcs.px-rem(88) funcs.px-rem(192) rgba(255, 0, 0, 0.24);
+
+  border-radius: 50%;
+}
+
+.mars_wrap {
+  z-index: 60;
+  border-radius: 50%;
+  overflow: hidden;
+
+  width: funcs.px-rem(388);
+  height: funcs.px-rem(388);
+
+  box-shadow: 0 0 48px 64px rgba(255, 187, 0, 0.08);
+
   transform: translate(-50%, -50%);
+
+  img {
+    user-select: none;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .banner_wrap__achievements {
+  z-index: 60;
   height: funcs.px-rem(380);
   width: funcs.px-rem(380);
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(2, 1fr);
+
+  .grid_item {
+    * {
+      height: 100%;
+    }
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 181px;
+  height: 36px;
+  background: none;
+  color: white;
+  border: 1px solid rgb(75, 108, 255);
+
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1;
 }
