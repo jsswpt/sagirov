@@ -1,0 +1,6 @@
+@use "../../modules/funcs.module";
+
+.container {
+  margin: 0 auto;
+  width: funcs.px-rem(1170);
+}

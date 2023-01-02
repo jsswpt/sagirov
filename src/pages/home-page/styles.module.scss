@@ -1,0 +1,62 @@
+@use "../../shared/modules/funcs.module";
+@use "../../shared/modules/units.module";
+
+.banner_section {
+  position: relative;
+  padding-top: calc(units.$header-height + funcs.px-rem(38));
+  display: flex;
+  background: url("../../shared/assets/imgs/bg.png");
+  background-size: cover;
+  background-position-y: 50%;
+  background-position-x: 50%;
+  background-repeat: no-repeat;
+  height: funcs.px-rem(660);
+}
+
+.banner_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.banner_wrap__welcome {
+  width: funcs.px-rem(446);
+}
+
+.welcome_wrap {
+}
+
+.welcome_wrap__top {
+  position: relative;
+  padding-top: funcs.px-rem(72);
+  margin-bottom: funcs.px-rem(87);
+}
+
+.title {
+  max-width: funcs.px-rem(430.24);
+  font-weight: 500;
+  font-size: funcs.px-rem(58);
+  letter-spacing: funcs.px-rem(0.05);
+  line-height: 1;
+  text-transform: uppercase;
+  color: white;
+
+  span {
+    display: block;
+    font-size: funcs.px-rem(25);
+    font-weight: 300;
+    letter-spacing: funcs.px-rem(0.2);
+    text-transform: none;
+  }
+}
+
+.mars_wrap {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.banner_wrap__achievements {
+  height: funcs.px-rem(380);
+  width: funcs.px-rem(380);
+}

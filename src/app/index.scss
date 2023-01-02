@@ -1,11 +1,23 @@
+@import "../shared/assets/fonts/museo-sans/stylesheet.css";
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: "Museo Sans Cyrl", sans-serif;
 }
 
 html,
 body {
   font-size: 100%;
+}
+
+:root {
+  --text-primary: #fff;
+  --text-secondary: #b1b1b1;
+  --stroke: #262b30;
+}
+
+body {
+  background: #101a20;
 }

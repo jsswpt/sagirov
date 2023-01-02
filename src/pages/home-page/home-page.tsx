@@ -2,15 +2,18 @@ import { useEffect, useMemo, useState, useCallback } from "react";
 
 import st from "./styles.module.scss";
 import cn from "classnames";
+import { Header } from "widgets";
 import { BannerSection } from "./sections/banner-section/banner-section";
 
-export const HomePage = () => {
+const HomePage = () => {
   return (
     <>
-      <div>header</div>
-      <main>
+      <Header />
+      <main className={st.main}>
         <BannerSection />
       </main>
     </>
   );
 };
+
+export default HomePage;

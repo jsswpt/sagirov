@@ -1,0 +1,9 @@
+@use "./funcs.module";
+
+@mixin link1 {
+  font-size: funcs.px-rem(16);
+  line-height: 1.375;
+  letter-spacing: funcs.px-rem(0.2);
+
+  @content;
+}
