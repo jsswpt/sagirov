@@ -1,0 +1,276 @@
+@use "../../shared/modules/funcs.module";
+@use "../../shared/modules/units.module";
+@use "../../shared/modules/typography.module";
+@use "../../shared/modules/breakpoints.module";
+
+.banner_section {
+  position: relative;
+
+  padding-top: calc(units.$header-height-xs + funcs.px-rem(38));
+
+  @include breakpoints.media-screen(breakpoints.$sm) {
+    padding-top: calc(units.$header-height + funcs.px-rem(38));
+  }
+  display: flex;
+  background: url("../../shared/assets/imgs/stars.png");
+  background-size: cover;
+  background-position-y: 50%;
+  background-position-x: 50%;
+  background-repeat: no-repeat;
+  min-height: funcs.px-rem(660);
+}
+
+.banner_container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: funcs.px-rem(108);
+
+  @include breakpoints.media-screen(breakpoints.$xl) {
+    flex-direction: row;
+    gap: 0;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.banner_wrap__welcome {
+  z-index: 65;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100vh - units.$header-height - funcs.px-rem(38));
+
+  @include breakpoints.media-screen(breakpoints.$xl) {
+    z-index: 50;
+    height: auto;
+    display: block;
+  }
+  max-width: funcs.px-rem(446);
+}
+
+.welcome_wrap__top {
+  position: relative;
+
+  padding-top: funcs.px-rem(72);
+  margin-bottom: funcs.px-rem(36);
+
+  @include breakpoints.media-screen(breakpoints.$xl) {
+    margin-bottom: funcs.px-rem(87);
+  }
+}
+
+.title {
+  @include typography.h1 {
+    max-width: funcs.px-rem(430.24);
+    width: fit-content;
+
+    color: transparent;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 106, 0, 1) 95%,
+      rgba(255, 106, 0, 1) 100%
+    );
+
+    background-clip: text;
+  }
+
+  text-align: center;
+  @include breakpoints.media-screen(breakpoints.$xl) {
+    text-align: start;
+  }
+
+  span {
+    @include typography.subtitle1 {
+      display: block;
+      text-transform: none;
+    }
+  }
+}
+
+.stars_wrap,
+.sun_wrap,
+.mars_wrap {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+.stars_wrap {
+  z-index: 40;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+
+  @include breakpoints.media-screen(breakpoints.$xl) {
+    width: auto;
+    height: auto;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    user-select: none;
+    pointer-events: none;
+    transform: scale(1.02);
+  }
+}
+
+.sun_wrap {
+  z-index: 55;
+  width: calc(100vw / 3);
+  height: calc(100vw / 3);
+  transform: translate(calc(-50% + (100vw / 4.8)), calc(-50% + (100vw / 8.8)));
+
+  @include breakpoints.media-screen(breakpoints.$xl) {
+    width: funcs.px-rem(388 / 3);
+    height: funcs.px-rem(388 / 3);
+    transform: translate(
+      calc(-50% + funcs.px-rem(388 / 2.8)),
+      calc(-50% + funcs.px-rem(388 / 5.8))
+    );
+  }
+
+  background: rgb(255, 255, 255);
+
+  filter: blur(funcs.px-rem(388 / 50));
+
+  box-shadow: funcs.px-rem(-24) 0 funcs.px-rem(24) funcs.px-rem(24)
+      rgba(255, 238, 0, 1),
+    funcs.px-rem(-24) 0 funcs.px-rem(48) funcs.px-rem(64)
+      rgba(255, 220, 0, 0.86),
+    funcs.px-rem(-24) 0 funcs.px-rem(64) funcs.px-rem(140)
+      rgba(255, 188, 0, 0.5),
+    funcs.px-rem(-24) 0 funcs.px-rem(140) funcs.px-rem(192)
+      rgba(255, 0, 0, 0.15);
+
+  border-radius: 50%;
+}
+
+.mars_wrap {
+  z-index: 60;
+  overflow: hidden;
+  border-radius: 50%;
+
+  width: calc(100vw / 1.5);
+  height: calc(100vw / 1.5);
+
+  @include breakpoints.media-screen(breakpoints.$xl) {
+    width: funcs.px-rem(388);
+    height: funcs.px-rem(388);
+  }
+
+  box-shadow: 0 0 funcs.px-rem(32) funcs.px-rem(24) rgba(255, 187, 0, 0.08);
+
+  transform: translate(-50%, -50%);
+
+  img {
+    user-select: none;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    scale: 1.01;
+  }
+}
+
+.banner_wrap__achievements {
+  z-index: 60;
+  display: grid;
+  width: 100%;
+
+  grid-template-columns: 1;
+  gap: funcs.px-rem(8);
+
+  @include breakpoints.media-screen(breakpoints.$sm) {
+    height: funcs.px-rem(380);
+    width: funcs.px-rem(380);
+    grid-template-columns: repeat(2, 50%);
+  }
+}
+
+.button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: funcs.px-rem(181);
+  height: funcs.px-rem(36);
+  background: none;
+  color: white;
+  border: 1px solid transparent;
+
+  $gradient: linear-gradient(
+    to bottom right,
+    rgba(255, 0, 0, 0),
+    #24599c,
+    rgba(255, 0, 0, 0)
+  );
+  border-image: $gradient;
+  border-image-slice: 1;
+
+  -moz-border-image: $gradient;
+
+  cursor: pointer;
+
+  @include typography.button-inner;
+}
+
+.button_corner__bottom_left {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  $shadow: 0 0 8px white;
+
+  &::before {
+    position: absolute;
+    content: "";
+    left: -1px;
+    bottom: -1px;
+    width: 5px;
+    height: 1px;
+    background: white;
+    box-shadow: $shadow;
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    left: -1px;
+    bottom: -1px;
+    width: 1px;
+    height: 5px;
+    background: white;
+    box-shadow: $shadow;
+  }
+}
+.button_corner__top_right {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  $shadow: 0 0 8px white;
+
+  &::before {
+    position: absolute;
+    content: "";
+    right: -1px;
+    top: -1px;
+    width: 5px;
+    height: 1px;
+    background: white;
+    box-shadow: $shadow;
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    right: -1px;
+    top: -1px;
+    width: 1px;
+    height: 5px;
+    background: white;
+    box-shadow: $shadow;
+  }
+}

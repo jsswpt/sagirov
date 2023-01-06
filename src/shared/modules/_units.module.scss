@@ -1,0 +1,7 @@
+@use "./funcs.module";
+
+$header-height: funcs.px-rem(100);
+$header-height-xs: funcs.px-rem(64);
+
+$logo-height: funcs.px-rem(100);
+$logo-width: funcs.px-rem(316);
