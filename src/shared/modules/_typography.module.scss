@@ -1,9 +1,42 @@
 @use "./funcs.module";
+@use "./breakpoints.module";
 
 @mixin link1 {
   font-size: funcs.px-rem(16);
   line-height: 1.375;
   letter-spacing: funcs.px-rem(0.2);
+
+  @content;
+}
+
+@mixin h1 {
+  font-weight: 500;
+  font-size: funcs.px-rem(48);
+  @include breakpoints.media-screen(breakpoints.$sm) {
+    font-size: funcs.px-rem(58);
+  }
+  letter-spacing: funcs.px-rem(0.05);
+  line-height: 1;
+  text-transform: uppercase;
+
+  @content;
+}
+
+@mixin subtitle1 {
+  font-size: funcs.px-rem(18);
+  @include breakpoints.media-screen(breakpoints.$xl) {
+    font-size: funcs.px-rem(25);
+  }
+  font-weight: 300;
+  letter-spacing: funcs.px-rem(0.2);
+
+  @content;
+}
+
+@mixin button-inner {
+  font-weight: 300;
+  font-size: funcs.px-rem(14);
+  line-height: 1;
 
   @content;
 }

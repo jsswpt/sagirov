@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState, useCallback } from "react";
 
 import st from "../../styles.module.scss";
 import cn from "classnames";
-import { Container, Plate } from "shared/ui";
+import { AchievementPlate, Container, Plate } from "shared/ui";
 import Mars from "shared/assets/imgs/mars.png";
 import Stars from "shared/assets/imgs/custom-stars.png";
 
@@ -16,7 +16,11 @@ export const BannerSection = () => {
               Путешествие <span>на красную планету</span>
             </h1>
           </div>
-          <button className={st.button}>Начать путешествие</button>
+          <button className={st.button}>
+            <i className={st.button_corner__bottom_left}></i>
+            <i className={st.button_corner__top_right}></i>
+            Начать путешествие
+          </button>
         </div>
         <div className={st.stars_wrap}>
           <img src={Stars} alt="stars" />
@@ -27,16 +31,28 @@ export const BannerSection = () => {
         </div>
         <div className={cn(st.banner_wrap, st.banner_wrap__achievements)}>
           <div className={st.grid_item}>
-            <Plate>123</Plate>
+            <AchievementPlate topTitle="Мы" midTitle="1" botTitle="на рынке" />
           </div>
           <div className={st.grid_item}>
-            <Plate>123</Plate>
+            <AchievementPlate
+              topTitle="Гарантируем"
+              midTitle="50%"
+              botTitle="безопасность"
+            />
           </div>
           <div className={st.grid_item}>
-            <Plate>123</Plate>
+            <AchievementPlate
+              topTitle="Календарик за"
+              midTitle="2001г."
+              botTitle="в подарок"
+            />
           </div>
           <div className={st.grid_item}>
-            <Plate>123</Plate>
+            <AchievementPlate
+              topTitle="Путешествие"
+              midTitle="597"
+              botTitle="дней"
+            />
           </div>
         </div>
       </Container>

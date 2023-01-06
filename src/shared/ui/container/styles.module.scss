@@ -1,6 +1,11 @@
 @use "../../modules/funcs.module";
+@use "../../modules/breakpoints.module";
 
 .container {
+  padding: 0 funcs.px-rem(16);
   margin: 0 auto;
-  width: funcs.px-rem(1170);
+  width: 100%;
+  @include breakpoints.media-screen(breakpoints.$xl) {
+    width: breakpoints.$xl;
+  }
 }

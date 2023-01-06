@@ -46,6 +46,7 @@ export const HeaderChunk = () => {
             </li>
           </ul>
         </nav>
+        <div className={st.header_wrap__burger}>Burger</div>
       </Container>
     </header>
   );

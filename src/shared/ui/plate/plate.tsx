@@ -31,8 +31,6 @@ export const Plate = (props: Plate) => {
     setMouseY(event.layerY);
   };
 
-  console.log(lightSize! / 16 + "rem");
-
   return (
     <div
       {...props}
@@ -48,7 +46,6 @@ export const Plate = (props: Plate) => {
           [`--mouse-x`]: mouseX,
           [`--mouse-y`]: mouseY,
           [`--size`]: lightSize! / 16 + "rem",
-          [`--gavno`]: lightSize,
         } as React.CSSProperties
       }
     >
